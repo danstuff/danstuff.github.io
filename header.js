@@ -8,16 +8,19 @@ document.write('\
 		\
 		font-family:Verdana;\
 		color: white;\
+		text-align: center;\
 	}\
 	</style>\
+\
+	<a name="home"></a>\
 \
     <img width="725" src="header.png" usemap="#headermap">\
 \
 	<map name="headermap">\
-		<area shape="rect" coords="0,    18, 460,  97" alt="DanStuff"  href="index.htm">\
-		<area shape="rect" coords="0,   117, 128, 155" alt="Home"      href="index.htm">\
-		<area shape="rect" coords="181, 117, 338, 155" alt="Games"     href="games.htm">\
-		<area shape="rect" coords="392, 117, 521, 155" alt="Videos"    href="videos.htm">\
-		<area shape="rect" coords="570, 117, 724, 155" alt="About"     href="about.htm">\
+		<area shape="rect" coords="37,   64, 460, 97 " alt="DanStuff"  href="index.htm">\
+		<area shape="rect" coords="18,  119, 124, 145" alt="Home"      href="#home">\
+		<area shape="rect" coords="189, 119, 317, 145" alt="Games"     href="#games">\
+		<area shape="rect" coords="382, 119, 516, 145" alt="Videos"    href="#videos">\
+		<area shape="rect" coords="580, 119, 709, 145" alt="About"     href="#about">\
 	</map>\
 ');
