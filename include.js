@@ -27,6 +27,8 @@ function hasParameter(name, url){
 	
 	var results = regex.exec(url);	
 	
+	console.out("hp" + results);
+	
 	//return false if not found, otherwise true
 	if(!results) 
 		return false;
