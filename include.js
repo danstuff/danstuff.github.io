@@ -45,6 +45,7 @@ if(hasParameter('software_only')){
 	
 	elem = document.getElementById("res_theater");
 	elem.parentNode.removeChild(elem);
+	console.log("so set");
 }
 if(hasParameter('theater_only')){
 	elem = document.getElementById("tab_software");
