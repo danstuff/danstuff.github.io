@@ -3,33 +3,202 @@
 
 <head>
 	<title>Dan Yost</title>
-
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="include.js"></script>
 </head>
 
 <body>
-	<div class="bar">
-		<h1>Dan Yost</h1> 
+	<ul class="tab">
+		<h1>DAN YOST</h1>
+		<li><a href="javascript:void(0)" class="tablinks" id="default" onclick="openTab(event, 'resume')">
+		RESUME
+		</a></li>
+		<li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'software')">
+		SOFTWARE
+		</a></li>
+		<li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'theater')">
+		THEATER
+		</a></li>
+	</ul>
+	
+	<div id="resume" class="tabcontent">
+		<img src="prof_pic.jpg" class="profile"></img>
 		
-		<a href="index.htm" class="nav"> HOME 	  </a>
-		<a href="about.htm"	class="nav"> ABOUT 	  </a>
+		<br><br><br><br>
+		<p> DANIEL J. YOST is a versatile writer, programmer, and actor with experience in IT and the marketing world.</p>
+		<br><br><br><br>
+		
+		<h2>EDUCATION</h2>
+		<p>&emsp;-Union County Magnet High School
+		<br>&emsp;&emsp;&emsp;Current GPA: 3.8
+		<br>&emsp;&emsp;&emsp;Graduation Date: 6/9/2017</p>
+		
+		<h2>JOB EXPERIENCE</h2>
+		<p>&emsp;-Part Time Intern for Advantage Marketing Consulting Services
+		<br>&emsp;&emsp;&emsp;Description</p>
+		<p>&emsp;-Student Technology Intern at the Union County Vocational-Technical Schools
+		<br>&emsp;&emsp;&emsp;Description</p>
+		
+		<h2>THEATER EXPERIENCE</h2>
+		<p>&emsp;-Wrote and Directed the Comedic Skits:
+		<br>&emsp;&emsp;&emsp;<i>Club Logistics</i>
+		<br>&emsp;&emsp;&emsp;<i>Gym Class Football Stars</i></p>
+		
+		<p>&emsp;-Acted in the Performances:
+		<br>&emsp;&emsp;&emsp;<i>Murder in the Knife Room</i> as BOY BAND REJECT
+		<br>&emsp;&emsp;&emsp;<i>Coffeehouse 2015</i> as RICK and MUGGER
+		<br>&emsp;&emsp;&emsp;<i>The Greek Mythology Olympiaganza</i> as NARRATOR 2
+		<br>&emsp;&emsp;&emsp;<i>Coffeehouse 2016</i> as JOCK</p>
+		
+		<h2>PROGRAMMING KNOWLEDGE</h2>
+		<p>&emsp;-High Proficiency In:
+		<br>&emsp;&emsp;&emsp;C++
+		<br>&emsp;&emsp;&emsp;Java
+		<br>&emsp;&emsp;&emsp;HTML
+		<br>&emsp;&emsp;&emsp;Python
+		<br>&emsp;&emsp;&emsp;Processing</p>
+		<p>&emsp;-Additional Proficiency In:
+		<br>&emsp;&emsp;&emsp;Javascript
+		<br>&emsp;&emsp;&emsp;CSS
+		<br>&emsp;&emsp;&emsp;SQL
+		<br>&emsp;&emsp;&emsp;Lua</p>
 	</div>
 	
-	<div class="content">
-		<a href="spacecrusade.htm"> <img src="spacecrusade.png" class="thumb"></img></a>
-		<a href="ucli.htm">			<img src="ucli.png" 		class="thumb"></img></a>
-		<a href="hackmail.htm">		<img src="hackmail.png" 	class="thumb"></img></a>
-		<a href="locker.htm">		<img src="locker.png" 		class="thumb"></img></a>
-		<a href="dolos.htm">		<img src="dolos.png" 		class="thumb"></img></a>
-		<a href="instalink.htm">	<img src="instalink.png"	class="thumb"></img></a>
-		<a href="cashtracker.htm">	<img src="cashtracker.png"	class="thumb"></img></a>
-		<a href="cacophone.htm">	<img src="cacophone.png"	class="thumb"></img></a>
+	<div id="software" class="tabcontent">
+		<img src="spacecrusade.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> SPACE CRUSADE </h2>
+		<p style="font-size:12px;">Space Crusade is a small arcade-style shooter in which you play as a 
+		small spacecraft equipped with lasers and missiles defending against an onslaught of enemies. It
+		features customizable ship colors, three different types of enemy ships, power-ups, and more!
+		Aim your ship with the mouse and move using WASD. Left click to shoot lasers, and right click
+		to shoot missiles. Navigate menus with the mouse. Created in the Summer of 2014.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="spacecrusade.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/SpaceCrusade" target="_blank">GITHUB PAGE</a></li>
+		</ul>
 		
+		<br>
+		
+		<img src="ucli.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> UCLI </h2>
+		<p style="font-size:12px;">Useless Coding Language Interpreter (UCLI) is a bytecode interpreter which can 
+		compile and run programs written in a stack-based programming language called UCL. It was built entirely
+		from the ground up and features input, output, and basic arithmetic. As the name suggests, the language 
+		is fairly rudimentary. Created late in 2014. </p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="ucli.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/ucli" target="_blank">GITHUB PAGE</a></li>
+		</ul>
+		
+		<br>
+		
+		<img src="hackmail.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> HACKMAIL </h2>
+		<p style="font-size:12px;">HackMail is a marketing tool used in preparation for HackUC, a hackathon on the
+		UCVTS campus. HackMail uses the Zoho Mail service to automate the mass-distribution of emails without the
+		recipients seeing who else the email was sent to. Most importantly, HackMail features auto-filling to
+		personalize the title and contents of each email; it replaces "&COMP" and "&NAME" markers with the name of
+		the company and recipient. Created in the Winter of 2016. </p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="hackmail.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/hackmail" target="_blank">GITHUB PAGE</a></li>
+		</ul>
+		
+		<br>
+		
+		<img src="locker.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> LOCKER </h2>
+		<p style="font-size:12px;">Locker is a small piece of software that can be used to encrypt a text document.
+		It uses XOR encryption to obscure data in a way that is entirely secure and reversible. 
+		To use Locker, simply type whatever you want in "locker.txt," then start up the executable and enter a key.
+		The file will now be unreadable, but restart the executable and re-enter your key, and the file will be 
+		decrypted, allowing you to access your data. Created in the Spring of 2016. </p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="locker.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/locker" target="_blank">GITHUB PAGE</a></li>
+		</ul>
+		
+		<br>
+		
+		<img src="dolos.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> DOLOS </h2>
+		<p style="font-size:12px;">Dolos is a CleverBot-esque artificial intelligence contained in under 200 lines 
+		of code. It draws from a conversation data file to generate responses to user input, and actively learns 
+		from how the user talks to it. Theoretically, the more data Dolos has, the more accurately it will respond 
+		to input, and the more human it will seem. Created in the Summer of 2016.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="dolos.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/dolos" target="_blank">GITHUB PAGE</a></li>
+		</ul>
+		
+		<br>
+		
+		<img src="instalink.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> INSTALINK </h2>
+		<p style="font-size:12px;">InstaLink is a simple program designed purely for personal convenience; its aim is
+		to make it easier to install essential programs on a new computer. The user can add and remove website URLs 
+		from its list, and open all of those URLs at once in the default internet browser. It comes preloaded with
+		some of my favorite programs' websites. Created in the Summer of 2016.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="instalink.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/instalink" target="_blank">GITHUB PAGE</a></li>
+		</ul>
+			
+		<br>
+		
+		<img src="cashtracker.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> CASHTRACKER </h2>
+		<p style="font-size:12px;">CashTracker is an application designed to keep a personal record of your bank balance.
+		It keeps precise historical records, a straightforward, easy-to-read user interface, and offers a number of
+		different analysis options. Created in the July, 2016.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="cashtracker.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/cashtracker" target="_blank">GITHUB PAGE</a></li>
+		</ul>
+			
+		<br>
+		
+		<img src="cacophone.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> CACOPHONE </h2>
+		<p style="font-size:12px;">acophone is a game about making music using swinging pendulums. There are multiple types 
+		of pendulum, accessible with the mouse wheel, and stationary blocks which add an additional layer of fun. It also
+		features a flexible settings menu. Created in the summer of 2016.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="cacophone.zip" class="download">DOWNLOAD</a></li>
+			<li><a href="https://github.com/danstuff/cacophone" target="_blank">GITHUB PAGE</a></li>
+		</ul>
 	</div>
 
+	<div id="theater" class="tabcontent">
+		<img src="clublogistics.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> CLUB LOGISTICS </h2>
+		<p style="font-size:12px;"><i>2 M, 1 F<i><br><br>
+		<i>Club Logistics</i> is a three-minute comedy skit written for the UCVTS Drama Club's
+		<i>Coffeehouse 2015</i>. It chronicles the story of a boy who is desperately trying to get his club
+		approved in the face of a problematic school administration.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="club logistics.pdf" target="_blank">DOWNLOAD</a></li>
+		</ul>
+		
+		<br>
+		
+		<img src="gymclass.png" class="thumbnail"></img>
+		<h2 style="line-height: 0.25em;"> GYM CLASS FOOTBALL STARS </h2>
+		<p style="font-size:12px;"><i>6 M/F<i><br><br>
+		<i>Gym Class Football Stars</i> is a four-minute comedy skit written for the UCVTS Drama Club's
+		<i>Coffeehouse 2016</i> about a group of not-so-sports-inclined highschoolers and an athlete's futile attempts to get them
+		to play football.</p>
+		<ul class="tab" style="position:initial;">
+			<li><a href="gym class football stars.pdf" target="_blank">DOWNLOAD</a></li>
+		</ul>
+	</div>
+	
+	<ul class="tab" style="left:0px; bottom:0px;">
+		<li><a href="http://www.linkedin.com/in/danyost23" target="_blank">LINKEDIN</a></li>
+		<li><a href="http://www.github.com/danstuff" target="_blank">GITHUB</a></li>
+		<li><a href="mailto:danyost23@gmail.com">EMAIL</a></li>
+	</ul>
+	
+	<script src="include.js"></script>
 </body>
 
 </html>

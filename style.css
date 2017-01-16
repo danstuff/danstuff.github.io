@@ -1,71 +1,67 @@
-.bar{
+ul.tab{
 	position: fixed;
 
-	width: 1000px;
+	width: 100%;
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 	
-	letter-spacing: 5px;
-	
-	text-transform: uppercase;
-	
-	color: white;
+	color:white;
 	background-color: black;
 }
 
-.content{
-	position: initial;
-	
-	width: 900px;
-	
-	margin: 0 auto;
-	
-	padding-top: 6em;
+ul.tab li{ float: left; }
+
+ul.tab li a{
+	display: inline-block;
+	color:white;
+	text-align:center;
+	padding: 10px 18px;
+	text-decoration: none;
+	transition: 0.4s;
 }
 
-.thumb{
-	width: 300px;
-	height: 200px;
-	float: left;
+ul.tab li a:hover {
+	background-color: #2F2F2F;
 }
 
-.banner{
-	width: 900px;
-	height: 600px;
-	float: left;
+ul.tab li a:focus, .active {
+	background-color: #757574;
 }
 
-.prof{
+.profile{
 	width: 200px;
 	height: 200px;
 	float: left;
 	padding-right: 32px;
 }
 
-.nav{
-	display: inline-block;
-
-	width: 150px;
-	height: 20px;
-	
-	padding-bottom: 8px;
-
-	font-size: 16px;
-	
-	text-align: center;
-
-	text-decoration: none;
-	
-	color: white;
+.thumbnail{
+	width: 300px;
+	height: 200px;
+	float: left;
+	padding: 0px;
+	padding-right:16px;
 }
 
-.download{
-	text-decoration: none;
+.tabcontent {
+	display: none;
+	padding: 24px 12px;
 	
 	color: black;
+
+	position: initial;
+	
+	width: 750px;
+	
+	margin: 0 auto;
+	
+	padding-top: 6em;
 }
 
 body{
-	width: 1000px;
-	
 	margin: 0 auto;
 
 	font-family: Verdana; 
@@ -81,23 +77,6 @@ h1{
 }
 
 h2{
-	text-align: center;
-	
-	color: black;
-	
-	font-size: 32px;
-	font-weight: normal;
-	
-	line-height: 1.5em;
-	
-	margin-bottom: 0;
-}
-
-h3{
-	text-align: center;
-	
-	color: black;
-	
 	font-size: 20px;
 	font-weight: normal;
 	
@@ -105,7 +84,6 @@ h3{
 }
 
 p{
-	text-indent: 5em;
 	line-height: 1.75em;
 	
 	margin-top: 0;

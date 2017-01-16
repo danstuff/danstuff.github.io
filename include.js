@@ -1,8 +1,20 @@
-$(document).ready(function(){
-	$(".nav").mouseenter(function(){
-		 $(this).animate({opacity: '0.5'});
-	});
-	$(".nav").mouseleave(function(){
-		 $(this).animate({opacity: '1.0'});
-	});
-});
+function openTab(evt, name){
+	var i, tabcontent, tablinks;
+	
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for(i = 0; i < tabcontent.length; i++){
+		tabcontent[i].style.display = "none";
+	}
+	
+	tablinks = document.getElementsByClassName("tablinks");
+	for(i = 0; i < tablinks.length; i++){
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	
+	document.getElementById(name).style.display = "block";
+	evt.currentTarget.className += " active";
+	
+	window.scrollTo(0,0);
+}
+
+document.getElementById("default").click();
