@@ -27,8 +27,6 @@ function hasParameter(name, url){
 	
 	var results = regex.exec(url);	
 	
-	console.out("hp" + results);
-	
 	//return false if not found, otherwise true
 	if(!results) 
 		return false;
@@ -47,7 +45,6 @@ if(hasParameter('software_only')){
 	
 	elem = document.getElementById("res_theater");
 	elem.parentNode.removeChild(elem);
-	console.log("so set");
 }
 if(hasParameter('theater_only')){
 	elem = document.getElementById("tab_software");
