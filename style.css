@@ -32,8 +32,8 @@ ul.tab li a:focus, .active {
 }
 
 .profile{
-	width: 200px;
-	height: 200px;
+	width: 260px;
+	height: 260px;
 	float: left;
 	padding-right: 32px;
 }
