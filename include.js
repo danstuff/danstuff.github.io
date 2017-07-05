@@ -39,23 +39,24 @@ document.getElementById("default").click();
 //cut certain elements based on URL tags
 var elem;
 
-if(hasParameter('software_only')){
-	elem = document.getElementById("tab_theater");
-	elem.parentNode.removeChild(elem);
-	
-	elem = document.getElementById("res_theater");
-	elem.parentNode.removeChild(elem);
-}
-if(hasParameter('theater_only')){
+if(hasParameter('software_off')){
 	elem = document.getElementById("tab_software");
 	elem.parentNode.removeChild(elem);
 	
 	elem = document.getElementById("res_software");
 	elem.parentNode.removeChild(elem);
 }
-if(hasParameter('no_tabs')){
-	var elem = document.getElementById("tab_software");
+if(hasParameter('theater_off')){
+	elem = document.getElementById("tab_theater");
 	elem.parentNode.removeChild(elem);
-	var elem = document.getElementById("tab_theater");
+	
+	elem = document.getElementById("res_theater");
+	elem.parentNode.removeChild(elem);
+}
+if(hasParameter('no_tabs')){
+	elem = document.getElementById("tab_software");
+	elem.parentNode.removeChild(elem);
+	
+	elem = document.getElementById("tab_theater");
 	elem.parentNode.removeChild(elem);
 }

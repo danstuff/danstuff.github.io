@@ -32,9 +32,9 @@ ul.tab li a:focus, .active {
 }
 
 .profile{
-	width: 260px;
-	height: 260px;
-	float: left;
+	width: 130px;
+	height: 130px;
+	float: right;
 	padding-right: 32px;
 }
 
@@ -77,14 +77,76 @@ h1{
 }
 
 h2{
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: normal;
 	
+	text-transform: uppercase;
+	
+	font-family: Verdana; 
+	
+	line-height: 1.75em;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h3{
+	font-size: 18px;
+	font-weight: normal;
+	
+	line-height: 1.75em;
+	
+		
+	margin-top: 0;
+	margin-bottom: 0;
+	
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+h4{
+	font-size: 18px;
+	font-weight: normal;
+	
+	font-family: Arial;
+	font-style: italic;
+
 	line-height: 1em;
+	
+	color: #404040;
+	
+	margin-top: 0;
+	margin-bottom: .375em;
+	
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+h5{
+	font-size: 24px;
+	font-weight: normal;
+	
+	text-transform: uppercase;
+	
+	font-family: Verdana; 
+	
+	line-height: 1.75em;
+	
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 p{
 	line-height: 1.75em;
 	
 	margin-top: 0;
+}
+
+p.indent{
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+
+p.small{
+	font-size: 12px;
 }
