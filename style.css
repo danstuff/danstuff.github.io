@@ -1,4 +1,4 @@
-ul.tab{
+ul.header{
 	position: fixed;
 
 	width: 100%;
@@ -12,9 +12,16 @@ ul.tab{
 	background-color: black;
 }
 
-ul.tab li{ float: left; }
+ul.header h1{
+	padding-left: 20px;
+	
+	font-size: 32px;
+	font-weight: normal;
+}
 
-ul.tab li a{
+ul.header li{ float: left; }
+
+ul.header li a{
 	display: inline-block;
 	color:white;
 	text-align:center;
@@ -23,22 +30,21 @@ ul.tab li a{
 	transition: 0.4s;
 }
 
-ul.tab li a:hover {
+ul.header li a:hover {
 	background-color: #2F2F2F;
 }
-
-ul.tab li a:focus, .active {
+ul.header li a:focus, .active {
 	background-color: #757574;
 }
 
-.profile{
-	width: 130px;
-	height: 130px;
+img.profile{
+	width: 140px;
+	height: 140px;
 	float: right;
 	padding-right: 32px;
 }
 
-.thumbnail{
+img.thumbnail{
 	width: 300px;
 	height: 200px;
 	float: left;
@@ -46,7 +52,61 @@ ul.tab li a:focus, .active {
 	padding-right:16px;
 }
 
-.tabcontent {
+body{
+	margin: 0 auto;
+
+	font-family: Verdana; 
+
+	line-height: 1em;
+}
+
+#header_print h1{
+	font-size: 48px;
+	font-weight: normal;
+	
+	font-family: Verdana; 
+	
+	line-height: 1em;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#header_print h2{
+	font-size: 24px;
+	font-weight: normal;
+	
+	font-family: Verdana; 
+	
+	line-height: 1em;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+	
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+}
+
+#header_print h3{
+	font-size: 16px;
+	font-weight: normal;
+	
+	font-family: Verdana; 
+	
+	line-height: 1.5em;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+	
+	float: right;
+	
+	text-align: right;
+		
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+
+div.tabcontent {
 	display: none;
 	padding: 24px 12px;
 	
@@ -61,22 +121,7 @@ ul.tab li a:focus, .active {
 	padding-top: 6em;
 }
 
-body{
-	margin: 0 auto;
-
-	font-family: Verdana; 
-
-	line-height: 1em;
-}
-
-h1{
-	padding-left: 20px;
-	
-	font-size: 32px;
-	font-weight: normal;
-}
-
-h2{
+div.tabcontent h1{
 	font-size: 24px;
 	font-weight: normal;
 	
@@ -90,7 +135,7 @@ h2{
 	margin-bottom: 0;
 }
 
-h3{
+div.tabcontent h2{
 	font-size: 18px;
 	font-weight: normal;
 	
@@ -104,7 +149,7 @@ h3{
 	padding-right: 1em;
 }
 
-h4{
+div.tabcontent h3{
 	font-size: 18px;
 	font-weight: normal;
 	
@@ -122,7 +167,7 @@ h4{
 	padding-right: 1em;
 }
 
-h5{
+div.tabcontent h4{
 	font-size: 24px;
 	font-weight: normal;
 	
@@ -138,7 +183,6 @@ h5{
 
 p{
 	line-height: 1.75em;
-	
 	margin-top: 0;
 }
 

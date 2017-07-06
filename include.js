@@ -34,6 +34,43 @@ function hasParameter(name, url){
 	return true;
 }
 
+function printPage(){
+	var elem;
+
+	elem = document.getElementById("header");
+	elem.parentNode.removeChild(elem);
+	
+	elem = document.getElementById("footer");
+	elem.parentNode.removeChild(elem);
+
+	elem = document.getElementById("resume");
+	elem.style.paddingTop = 0;
+	
+	elem = document.getElementById("header_print");
+	elem.innerHTML = "<h3>danyost23@gmail.com <br>\
+			908-451-2213 <br>\
+			danstuff.github.io</h3>\
+			<h1>DAN YOST</h1>\
+			<h2>Student - Westfield, NJ</h2>\
+			<br>";
+			
+	elem = document.getElementsByTagName("p");
+	for(var i in elem){
+		if(elem.hasOwnProperty(i))
+			elem[i].style.lineHeight = "1.5em";
+	}
+	
+	elem = document.getElementsByTagName("p");
+	for(var i in elem){
+		if(elem.hasOwnProperty(i))
+			elem[i].style.lineHeight = "1.5em";
+	}
+	
+	window.print();
+	
+	location.reload();
+}
+
 document.getElementById("default").click();
 
 //cut certain elements based on URL tags
