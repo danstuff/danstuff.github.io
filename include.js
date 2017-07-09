@@ -47,23 +47,39 @@ function printPage(){
 	elem.style.paddingTop = 0;
 	
 	elem = document.getElementById("header_print");
-	elem.innerHTML = "<h3>danyost23@gmail.com <br>\
+	elem.innerHTML = "<h6>danyost23@gmail.com <br>\
 			908-451-2213 <br>\
-			danstuff.github.io</h3>\
-			<h1>DAN YOST</h1>\
-			<h2>Student - Westfield, NJ</h2>\
-			<br>";
+			danstuff.github.io</h6>\
+			<h4>DAN YOST</h4>\
+			<h5>Student - Westfield, NJ</h5>";
 			
-	elem = document.getElementsByTagName("p");
+	elem = document.querySelectorAll("p");
 	for(var i in elem){
-		if(elem.hasOwnProperty(i))
+		if(elem.hasOwnProperty(i)){
+			elem[i].style.fontSize = "13px";
 			elem[i].style.lineHeight = "1.5em";
+		}
+	}		
+			
+	elem = document.querySelectorAll("div.tabcontent h1");
+	for(var i in elem){
+		if(elem.hasOwnProperty(i)){
+			elem[i].style.fontSize = "16px";
+		}
 	}
 	
-	elem = document.getElementsByTagName("p");
+	elem = document.querySelectorAll("div.tabcontent h2");
 	for(var i in elem){
-		if(elem.hasOwnProperty(i))
-			elem[i].style.lineHeight = "1.5em";
+		if(elem.hasOwnProperty(i)){
+			elem[i].style.fontSize = "15px";
+		}
+	}
+	
+	elem = document.querySelectorAll("div.tabcontent h3");
+	for(var i in elem){
+		if(elem.hasOwnProperty(i)){
+			elem[i].style.fontSize = "13px";
+		}
 	}
 	
 	window.print();

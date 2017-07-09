@@ -60,51 +60,6 @@ body{
 	line-height: 1em;
 }
 
-#header_print h1{
-	font-size: 48px;
-	font-weight: normal;
-	
-	font-family: Verdana; 
-	
-	line-height: 1em;
-	
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-#header_print h2{
-	font-size: 24px;
-	font-weight: normal;
-	
-	font-family: Verdana; 
-	
-	line-height: 1em;
-	
-	margin-top: 0;
-	margin-bottom: 0;
-	
-	padding-left: 0.1em;
-	padding-right: 0.1em;
-}
-
-#header_print h3{
-	font-size: 16px;
-	font-weight: normal;
-	
-	font-family: Verdana; 
-	
-	line-height: 1.5em;
-	
-	margin-top: 0;
-	margin-bottom: 0;
-	
-	float: right;
-	
-	text-align: right;
-		
-	padding-left: 0.2em;
-	padding-right: 0.2em;
-}
 
 div.tabcontent {
 	display: none;
@@ -150,7 +105,7 @@ div.tabcontent h2{
 }
 
 div.tabcontent h3{
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: normal;
 	
 	font-family: Arial;
@@ -167,21 +122,57 @@ div.tabcontent h3{
 	padding-right: 1em;
 }
 
+
 div.tabcontent h4{
-	font-size: 24px;
+	font-size: 36px;
 	font-weight: normal;
-	
-	text-transform: uppercase;
 	
 	font-family: Verdana; 
 	
-	line-height: 1.75em;
+	line-height: 1em;
 	
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
+div.tabcontent h5{
+	font-size: 16px;
+	font-weight: normal;
+	
+	font-family: Verdana; 
+	
+	line-height: 1em;
+	
+	margin-top: 0;
+	margin-bottom: 6px;
+	
+	padding-left: 0.1em;
+	padding-right: 0.1em;
+}
+
+div.tabcontent h6{
+	font-size: 12px;
+	font-weight: normal;
+	
+	font-family: Verdana; 
+	
+	line-height: 1.5em;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+	
+	float: right;
+	
+	text-align: right;
+		
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+}
+
+
 p{
+	font-size: 16px;
+
 	line-height: 1.75em;
 	margin-top: 0;
 }
