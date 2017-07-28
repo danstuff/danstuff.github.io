@@ -21,17 +21,8 @@ function hasParameter(name, url){
 	//populate url
 	if(!url) url = window.location.href;
 	
-	//search for everything after a ?name= or &name=
-	name = name.replace(/[\[\]]/g, "\\$&");
-	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-	
-	var results = regex.exec(url);	
-	
-	//return false if not found, otherwise true
-	if(!results) 
-		return false;
-		
-	return true;
+	//check if url contains value of name
+	return (url.indexOf(name) > -1);
 }
 
 function printPage(){
@@ -92,21 +83,25 @@ document.getElementById("default").click();
 //cut certain elements based on URL tags
 var elem;
 
-if(hasParameter('software_off')){
+if(hasParameter('nsoft')){
 	elem = document.getElementById("tab_software");
 	elem.parentNode.removeChild(elem);
 	
 	elem = document.getElementById("res_software");
 	elem.parentNode.removeChild(elem);
 }
-if(hasParameter('theater_off')){
+if(hasParameter('nthea')){
 	elem = document.getElementById("tab_theater");
 	elem.parentNode.removeChild(elem);
 	
 	elem = document.getElementById("res_theater");
 	elem.parentNode.removeChild(elem);
 }
-if(hasParameter('no_tabs')){
+if(hasParameter('nvolu')){
+	elem = document.getElementById("res_volunteer");
+	elem.parentNode.removeChild(elem);
+}
+if(hasParameter('ntabs')){
 	elem = document.getElementById("tab_software");
 	elem.parentNode.removeChild(elem);
 	
