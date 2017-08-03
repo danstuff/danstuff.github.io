@@ -42,7 +42,7 @@ function printPage(){
 			908-451-2213 <br>\
 			danstuff.github.io</h6>\
 			<h4>DANIEL YOST</h4>\
-			<h5>Student - Westfield, NJ</h5><br>";
+			<h5>Student - Westfield, NJ</h5><br><br>";
 			
 	elem = document.querySelectorAll("p");
 	for(var i in elem){
