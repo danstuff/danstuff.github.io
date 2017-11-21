@@ -1,121 +1,121 @@
-var slide_index = 0;
+var slide_x = 0;
+var slide_x_target = 0;
 
-function slideshow(index){
-	var slides;
-	
-	slides =  document.getElementsByClassName("slide");
-	
-	if(!slides) return;
-	
-	if(index >= slides.length){
-		slide_index = 0;
-	}else if(index < 0){
-		slide_index = slides.length-1;
-	}
-	
-	index = slide_index;
-	
-	for(i = 0; i < slides.length; i++){
-		if(i != index){
-			slides[i].style.display = "none";
-		}else{
-			slides[i].style.display = "block";
-		}
-	}
+var slide_filter = "";
+
+function mod(a, b){
+	return ((a%b)+b)%b;
 }
 
-function slideshowLeft(){
-	slide_index--;
-	slideshow(slide_index);
-}
-function slideshowRight(){
-	slide_index++;
-	slideshow(slide_index);
-}
-
-function openTab(evt, name){
-	var i, tabcontent, tablinks;
+function slideshow(){
+	//tween slide_x towards the target
+	slide_x += (slide_x_target-slide_x)*0.05;
 	
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for(i = 0; i < tabcontent.length; i++){
-		tabcontent[i].style.display = "none";
-	}
+	//calculate the length of both arrays
+	var image_len = $(".slide_image"+slide_filter).length;
+	var text_len = $(".slide_image"+slide_filter).length;
 	
-	tablinks = document.getElementsByClassName("tablinks");
-	for(i = 0; i < tablinks.length; i++){
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
+	//calculate the width of the image wrapper and amplitude
+	var wrap_w = $("#slide_image_wrapper").width();
+	var amp = wrap_w-$(".slide_image").width();
 	
-	document.getElementById(name).style.display = "block";
-	evt.currentTarget.className += " active";
+	//calculate which text will be visible
+	var text_selected = mod(slide_x_target, text_len);
 	
-	window.scrollTo(0,0);
-}
-
-function hasParameter(name, url){
-	//populate url
-	if(!url) url = window.location.href;
-	
-	//check if url contains value of name
-	return (url.indexOf(name) > -1);
-}
-
-function removeCat(name){
-	var elem;
-	
-	elem = document.getElementById("tab_"+name);
-	if(elem)	elem.parentNode.removeChild(elem);
-	
-	elem = document.getElementById("res_"+name);
-	if(elem)	elem.parentNode.removeChild(elem);
-}
-
-function setSize(selector, font_size, line_height){
-	var elems = document.querySelectorAll(selector);
-	for(var i in elems){
-		if(elems.hasOwnProperty(i)){
-			elems[i].style.fontSize = font_size;
-			elems[i].style.lineHeight = line_height;
-		}
-	}			
-}
-
-function printPage(){
-	document.getElementById("default").click();
-	
-	//remove header and footer
-	var header = document.getElementById("header");
-	header.parentNode.removeChild(header);
-	
-	var footer = document.getElementById("footer");
-	footer.parentNode.removeChild(footer);
-
-	var resume = document.getElementById("resume");
-	resume.style.paddingTop = 0;
+	//for each filtered slide image...
+	$(".slide_image"+slide_filter).each( function(index) {
+		//animate in a 3d circle pattern
+		var delta = (index-slide_x)*((2*Math.PI)/(image_len));
 		
-	var elem = document.getElementById("header_print");
-	elem.innerHTML = "<h3 style=\"float:right;\">danyost23@gmail.com <br><br>\
-			908-451-2213 <br><br>\
-			danstuff.github.io</h3>\
-			<br><h1>DANIEL YOST</h1>\
-			<h2 style=\"padding:0;\">Student - Westfield, NJ</h2><br>";
-			
-	setSize("p",  "0.75em", "1.25em");
-	setSize("h1", "1em", "0.5em");
-	setSize("h2", "1em", "0.5em");
-	setSize("h3", "1em", "0.5em");
+		var left = Math.sin(delta)*amp*0.9+amp/2;
+		var zIndex = Math.round(Math.cos(delta)*10);
+		var opacity = Math.cos(delta)+0.5;
+		var zoom = (Math.cos(delta)+1)/2;
+		
+		$(this).css({
+			"left":left.toString()+"px",
+			"z-index":zIndex.toString(),
+			"opacity":opacity.toString(),
+			"transform":"scale("+zoom.toString()+")"
+		});
+	});
 	
-	window.print();
-	
-	location.reload();
+	//for each filtered slide text...
+	$(".slide_text"+slide_filter).each( function(index) {
+		//hide if not the selected one
+		if(index == text_selected){
+			$(this).css({
+				"opacity":"+=0.02",
+				"display":"block"
+			});
+		}else{
+			$(this).css({
+				"opacity":"0",
+				"display":"none"
+			});
+		}
+	});
 }
 
-document.getElementById("default").click();
+function move(amount){
+	if($(".slide_image"+slide_filter).length > 1)
+		slide_x_target += amount;
+}
 
-//cut elements based on URL tags
-if(hasParameter('nsoft'))	removeCat("software");
-if(hasParameter('nthea'))	removeCat("theater");
-if(hasParameter('nvolu'))	removeCat("volunteer");
+function setFilter(filter){
+	slide_x = 0;
+	slide_x_target = $(".slide_text"+filter).length;
 
-//set up slideshow
-slideshow(slide_index);
+	slide_filter = filter;
+
+	//set all slides to be hidden
+	$(".slide_image").css({"display":"none"});
+	$(".slide_text").css({"display":"none"});
+	
+	//show only the slides that have filter class
+	$(".slide_image"+filter).css({"display":"block"});
+	$(".slide_text"+filter).css({"display":"block", "opacity":"0"});
+}
+
+function background(){
+	//find the document height
+	var top = document.getElementsByClassName("top")[0];
+	var footer = document.getElementsByClassName("footer")[0];
+	
+	var doc_height = footer.getBoundingClientRect().bottom - 
+						top.getBoundingClientRect().top;
+
+	//find the colors used by the css code
+	var style = window.getComputedStyle(document.body);
+							
+	var color_bkga = style.getPropertyValue('--color-bkga');
+	var color_bkgb = style.getPropertyValue('--color-bkgb');
+	var color_bkgc = style.getPropertyValue('--color-bkgc');
+							
+	//generate the trianglify background
+	var pattern = Trianglify({
+		width: window.innerWidth,
+		height: doc_height,
+		x_colors: [color_bkga, color_bkgb, color_bkgc]
+	});
+		
+	pattern.canvas(document.getElementById("background"));
+}
+
+$(document).ready(function(){
+	$("#home").click(function(){ setFilter(""); });
+	$("#resume").click(function(){ setFilter(".resume"); });
+	$("#films").click(function(){ setFilter(".film"); });
+	$("#games").click(function(){ setFilter(".game"); });
+	
+	$("#slide_left").click(function(){ move(-1); });
+	$("#slide_right").click(function(){ move(1); });
+	
+	setInterval( slideshow, 10);
+	
+	$(window).resize( background );
+	
+	background();
+	
+	$("#home").click();
+});

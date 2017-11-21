@@ -4,281 +4,77 @@
 <head>
 	<title>Daniel Yost</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="icon" href="prof_pic.jpg">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+	<link rel="icon" href="icon.png">
 </head>
 
 <body>
-	<div id="header">
-		<img class="profile" src="prof_pic.jpg"></img>
-		
-		<h1>DANIEL YOST</h1>
-		<div style="display:inline-block">
-		<a href="javascript:void(0)" class="tablinks" id="default" onclick="openTab(event, 'resume')">
-		RESUME
-		</a>
-		<a href="javascript:void(0)" class="tablinks" id="tab_software"onclick="openTab(event, 'software')">
-		SOFTWARE
-		</a>
-		<a href="javascript:void(0)" class="tablinks" id="tab_theater"onclick="openTab(event, 'theater')">
-		WRITING
-		</a>
-		</div>
+	<canvas id="background" class="noprint"></canvas>
+	
+	<div class="horizontal_line top noprint"></div>
+	
+	<div id="slide_left"></div>
+	<div id="slide_right"></div>
+	
+	<h1>Daniel Yost</h1>
+	<h3 id="menu_items">
+		<a id="home">Home</a> |
+		<a id="resume">Resume</a> |
+		<a id="films">Films</a> |
+		<a id="games">Games</a>
+	</h3>
+	
+	<div id="slide_image_wrapper">
+		<img class="slide_image resume" src="resume.png"></img>
+		<img class="slide_image game" src="spacecrusade.png"></img>
+		<img class="slide_image game" src="cacophone.png"></img>
+		<img class="slide_image game" src="obamatrail.png"></img>
 	</div>
 	
-	<div id="footer">
-		<a href="http://www.linkedin.com/in/danyost23" target="_blank">LINKEDIN</a>
-		<a href="http://www.github.com/danstuff" target="_blank">GITHUB</a>
-		<a href="mailto:danyost23@gmail.com">EMAIL</a>
-		<a href="javascript:void(0)" onclick="printPage()">PRINT</a>
+	<div class="slide_text resume first">
+		<h2> Welcome! </h2>
+		<p>Daniel Yost is a Computer Science student with experience in IT, game design, theater, and film.</p>
+		<h3 class="slide_links">
+			<a href="resume.pdf" target="_blank">View Resume</a>
+		</h3>
 	</div>
 	
-	<div id="resume" class="tabcontent">		
-		<div id="header_print"></div>
-	
-		<h1>SUMMARY</h1>
-		<p>&emsp;DANIEL YOST is a software and IT expert with experience in marketing, film, and theater.</p>
-		
-		<h1>WORK EXPERIENCE</h1>
-		<h2>Marketing Intern (2014-2017)</h2> 
-		<h3>Advantage Marketing Consulting Services - Westfield, NJ</h3>
-		<p class="indent">
-		At Advantage Marketing Consulting Services, I had a diverse technical role. On the technical side, I built WordPress sites, wrote blog posts, and created email newsletters, which often involved writing HTML code from scratch. I also assisted in client relations at several trade shows. 
-		</p>
-		
-		<h2>Student Technology Intern (2016-2017)</h2>
-		<h3>Union County Vocational-Technical Schools - Scotch Plains, NJ</h3>
-		<p class="indent">
-		As a Technology Intern, it was my job to reach out to students and staff across the UCVTS campus and fix their technical problems. This job boosted my on-the-spot problem solving skills and taught me how to handle all types of customers.
-		</p>
-		
-		<h1>EDUCATION</h1>
-		<h2>Union County Magnet High School</h2>
-		<h3>September 2013 - June 2017</h3>
-
-		<p class="indent">
-		Certifications, Awards, and Accomplishments:
-		<br>&emsp;3.8 Graduating GPA
-		<br>&emsp;Honor Roll, 2013-2017
-		<br>&emsp;Drama Club Merit Scholarship Award
-		<br>&emsp;Excellence in Modern American Literature
-		<br>&emsp;AP Scholar Award with Distinction
-		<br>&emsp;National Honor Society Member
-		<br>&emsp;Class Council Vice President
-		<br>&emsp;Gay-Straight Alliance Vice President
-		</p>
-		
-		<div id="res_software">
-			<h1>PROGRAMMING EXPERIENCE</h1>
-			<p>
-			I have written security software, games, websites, and tools in C++, Java, HTML, PHP, Processing, and JavaScript. I also have skills in CSS, SQL, Python, and Lua. I created my website <a href="http://danstuff.github.io">danstuff.github.io</a> entirely from scratch using CSS, JavaScript, and HTML.
-			<br>I have extensively used Microsoft Visual Studio, Eclipse, and Code::Blocks, and have some experience in Android Studio. I am also well-versed in GitHub, and have experience in GIMP, Inkscape, Blender, and Shotcut.
-			</p>
-		</div>
-		
-		<div id="res_theater">
-			<h1>ACTING EXPERIENCE</h1>
-			<h2>New York Film Academy- Acting for Film</h2>
-			<h3>September 2017 - November 2017</h3>
-			
-			<p class="indent">
-			</p>
-			
-			<h2>Union County Vocational-Technical Schools Drama Club</h2>
-			<h3>September 2014 - June 2017</h3>
-			
-			<p class="indent">
-			I wrote and directed the comedic skits <i>Club Logistics</i> and <i>Gym Class Football Stars</i>. I also directed the Club's spring 2017 show, which was a full-length comedy called <i>The Election</i>. I also created and directed the UCVTS improv group, and acted in the following performances:
-			<br>&emsp;<i>Murder in the Knife Room</i> as BOY BAND REJECT
-			<br>&emsp;<i>Coffeehouse 2015</i> as RICK, MUGGER
-			<br>&emsp;<i>The Greek Mythology Olympiaganza</i> as NARRATOR 2
-			<br>&emsp;<i>Coffeehouse 2016</i> as JOCK
-			</p>
-		</div>
-		
-		<div id="res_volunteer">
-			<h1>VOLUNTEER EXPERIENCE</h1>
-			
-			<h2>Furniture Assist Website Designer</h2>
-			<h3>July 2017 - December 2017</h3>
-			
-			<p class="indent">
-			In 2017, I fully re-designed the Furniture Assist website, <a href="http://www.furnitureassist.com">www.furnitureassist.com</a> using PHP, MySQL, HTML, CSS, and Javascript. The new website significantly increases the productivity of this non-profit organization.
-			</p>
-			
-			<h2>American Cancer Society's Relay for Life</h2>
-			<h3>September 2013 - June 2017</h3>
-			
-			<p class="indent">
-			I participated in this event in every year of my high school career. I raised over $1,500 and clocked over 90 service hours in support of cancer research and aid.
-			</p>
-			
-			<h2>Martial Arts America Class Instructor</h2>
-			<h3>January 2012 - September 2013</h3>
-			
-			<p class="indent">
-			As a student black belt at Martial Arts America in Scotch Plains, NJ, I assisted in teaching over 100 Taekwondo classes.
-			</p>
-		</div>
-	</div>
-	
-	<div id="software" class="tabcontent">
-		
-		
-		<div class="slide">
-		<img src="trymath.png" class="content"></img>
-		<p class="caption">TryMath is a mathematics practice tool designed to help kids and adults better utilize their
-		math skills under time pressure. For an extra challenge, TryMath features the Hard Multiply and Hard Divide
-		difficulty modes. Be careful, Hard Divide is very tough! Created in 12 hours on July 27th, 2017. </p>
-		<p>
-		<div id="trymath" class="bar">
-			<div style="margin:0 auto">
-				<button class="slideshow_button_left" onclick="slideshowLeft()">&#10094;</button>
-				<a href="trymath.zip" class="download">DOWNLOAD</a>
-				<a href="https://github.com/danstuff/TryMath" target="_blank">GITHUB PAGE</a>
-				<button class="slideshow_button_right" onclick="slideshowRight()">&#10095;</button>
-			</div>
-		</div>
-		</p>
-		</div>
-		
-		<div class="slide">
-		<img src="obamatrail.png" class="thumbnail"></img>
-		<p class="small">Obama Trail is a short quiz game themed like the classic educational game Oregon Trail. By
-		answering the questions as accurately as you can to what Obama actually did, you'll help Obama and Biden survive 
-		their presidential term! Created in April of 2017 with the help of writers Kami Beckford, Myia Samuels, and 
-		Mateo Ginocchi.</p>
-		<div class="header" style="position:initial;">
-			<a href="obamatrail.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/Obama_Trail" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="cacophone.png" class="thumbnail"></img>
-		<p class="small">Cacophone is a game about making music using swinging pendulums. There are multiple types 
-		of pendulum, accessible with the mouse wheel, and stationary blocks which add an additional layer of fun. It also
-		features a flexible settings menu. Created in the summer of 2016.</p>
-		<div class="header" style="position:initial;">
-			<a href="cacophone.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/cacophone" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="cashtracker.png" class="thumbnail"></img>
-		<p class="small">CashTracker is an application designed to keep a personal record of your bank balance.
-		It keeps precise historical records, utilizes a straightforward, easy-to-read user interface, and offers a number of
-		different analysis options. Created in July, 2016.</p>
-		<div class="header" style="position:initial;">
-			<a href="cashtracker.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/cashtracker" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="instalink.png" class="thumbnail"></img>
-		<p class="small">InstaLink is a simple program designed purely for personal convenience; its aim is
-		to make it easier to install essential programs on a new computer. The user can add and remove website URLs 
-		from its list, and open all of those URLs at once in the default internet browser. It comes preloaded with
-		some of my favorite programs' websites. Created in the Summer of 2016.</p>
-		<div class="header" style="position:initial;">
-			<a href="instalink.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/instalink" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="dolos.png" class="thumbnail"></img>
-		<p class="small">Dolos is a CleverBot-esque artificial intelligence contained in under 200 lines 
-		of code. It draws from a conversation data file to generate responses to user input, and actively learns 
-		from how the user talks to it. Theoretically, the more data Dolos has, the more accurately it will respond 
-		to input, and the more human it will seem. Created in the Summer of 2016.</p>
-		<div class="header" style="position:initial;">
-			<a href="dolos.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/dolos" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="locker.png" class="thumbnail"></img>
-		<p class="small">Locker is a small piece of software that can be used to encrypt a text document.
-		It uses XOR encryption to obscure data in a way that is entirely secure and reversible. 
-		To use Locker, simply type whatever you want in "locker.txt," then start up the executable and enter a key.
-		The file will now be unreadable, but restart the executable and re-enter your key, and the file will be 
-		decrypted, allowing you to access your data. Created in the Spring of 2016. </p>
-		<div class="header" style="position:initial;">
-			<a href="locker.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/locker" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="hackmail.png" class="thumbnail"></img>
-		<p class="small">HackMail is a marketing tool used in preparation for HackUC, a hackathon on the
-		UCVTS campus. HackMail uses the Zoho Mail service to automate the mass-distribution of emails without the
-		recipients seeing who else the email was sent to. Most importantly, HackMail features auto-filling to
-		personalize the title and contents of each email; it replaces "&COMP" and "&NAME" markers with the name of
-		the company and recipient. Created in the Winter of 2016. </p>
-		<div class="header" style="position:initial;">
-			<a href="hackmail.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/hackmail" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="ucli.png" class="thumbnail"></img>
-		<p class="small">Useless Coding Language Interpreter (UCLI) is a bytecode interpreter which can 
-		compile and run programs written in a stack-based programming language called UCL. It was built entirely
-		from the ground up and features input, output, and basic arithmetic. As the name suggests, the language 
-		is fairly rudimentary. Created in late 2014. </p>
-		<div class="header" style="position:initial;">
-			<a href="ucli.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/ucli" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>
-		
-		<div class="slide">
-		<img src="spacecrusade.png" class="thumbnail"></img>
-		<p class="small">Space Crusade is a small arcade-style shooter in which you play as a 
-		small spacecraft equipped with lasers and missiles defending against an onslaught of enemies. It
-		features customizable ship colors, three different types of enemy ships, power-ups, and more!
-		Aim your ship with the mouse and move using WASD. Left click to shoot lasers, and right click
-		to shoot missiles. Navigate menus with the mouse. Created in the Summer of 2014.</p>
-		<div class="header" style="position:initial;">
-			<a href="spacecrusade.zip" class="download">DOWNLOAD</a>
-			<a href="https://github.com/danstuff/SpaceCrusade" target="_blank">GITHUB PAGE</a>
-		</div>
-		</div>		
-		
+	<div class="slide_text game">
+		<h2> Space Crusade </h2>
+		<p>Space Crusade is a small arcade-style shooter in which you play as a small spacecraft equipped with lasers and missiles defending against an onslaught of enemies. It features customizable ship colors, three different types of enemy ships, power-ups, and more! Aim your ship with the mouse and move using WASD. Left click to shoot lasers, and right click to shoot missiles. Navigate menus with the mouse. Created in the Summer of 2014.</p>
+		<h3 class="slide_links">
+			<a href="spacecrusade.zip" download>Download</a> | 
+			<a href="https://github.com/danstuff/SpaceCrusade" target="_blank">Github Page</a>
+		</h3>
 	</div>
 
-	<div id="theater" class="tabcontent">
-		<img src="gymclass.png" class="thumbnail"></img>
-		<h1> GYM CLASS FOOTBALL STARS </h1>
-		<p class="small"><i>6 M/F</i><br><br>
-		<i>Gym Class Football Stars</i> is a four-minute comedy skit written for the UCVTS Drama Club's
-		<i>Coffeehouse 2016</i> about a group of not-so-sports-inclined highschoolers and an athlete's futile attempts to get them
-		to play football.</p>
-		<div class="header" style="position:initial;">
-			<a href="gym class football stars.pdf" target="_blank">DOWNLOAD</a>
-		</div>
-		
-		<br>
-	
-		<img src="clublogistics.png" class="thumbnail"></img>
-		<h1> CLUB LOGISTICS </h1>
-		<p class="small"><i>2 M, 1 F</i><br><br>
-		<i>Club Logistics</i> is a three-minute comedy skit written for the UCVTS Drama Club's
-		<i>Coffeehouse 2015</i>. It chronicles the story of a boy who is desperately trying to get his club
-		approved in the face of a problematic school administration.</p>
-		<div class="header" style="position:initial;">
-			<a href="club logistics.pdf" target="_blank">DOWNLOAD</a>
-		</div>
-		
-		<br>
+	<div class="slide_text game">
+		<h2> Cacophone </h2>
+		<p>Cacophone is a game about making music using swinging pendulums. There are multiple types of pendulum, accessible with the mouse wheel, and stationary blocks which add an additional layer of fun. It also features a flexible settings menu. Created in the summer of 2016.</p>
+		<h3 class="slide_links">
+			<a href="cacophone.zip" download>Download</a> | 
+			<a href="https://github.com/danstuff/Cacophone" target="_blank">Github Page</a>
+		</h3>
+	</div>
+
+	<div class="slide_text game">
+		<h2> Obama Trail </h2>
+		<p>Obama Trail is a short quiz game themed like the classic educational game Oregon Trail. By answering the questions as accurately as you can to what Obama actually did, you'll help Obama and Biden survive their presidential term! Created in April of 2017 with the help of writers Kami Beckford, Myia Samuels, and Mateo Ginocchi.</p>
+		<h3 class="slide_links">
+			<a href="obamatrail.zip" download>Download</a> | 
+			<a href="https://github.com/danstuff/Obama_Trail" target="_blank">Github Page</a>
+		</h3>
 	</div>
 	
+	<div class="horizontal_line noprint"></div>
+	
+	<h4 class="footer noprint">	
+		<a href="https://www.github.com/danstuff" target="_blank"><i class="fa fa-github fa-5x"></i></a>
+		<a href="https://www.linkedin.com/in/danyost23/" target="_blank"><i class="fa fa-linkedin-square fa-5x"></i></a>
+		<br><a href="mailto:danyost23@gmail.com">danyost23@gmail.com</a>
+	</h4>
+	
+	<script src="jquery.js"></script>
+	<script src="trianglify.js"></script>
 	<script src="include.js"></script>
 </body>
-
-</html>
