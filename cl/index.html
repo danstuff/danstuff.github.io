@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+  <head>
+    <title>CorpsLog</title>
+
+    <link rel="icon" href="rsc/corpslog_icon.png">
+    <link rel="stylesheet" type="text/css" href="rsc/style.css">
+    <link rel="stylesheet" type="text/css" href="rsc/fontawesome-all.css">
+  </head>
+
+  <body>
+    <!-- WELCOME MENU !-->
+    <div id="welcome" class="overlay">
+      <div class="center" style="text-align:center;">
+        <br>
+        <img class="med" src="rsc/corpslog_icon.png"></img>
+        <h1>WELCOME TO CORPSLOG!</h1>
+        <p>CorpsLog is your one-stop-shop for keeping track of your hours and submitting them to the OnCorps System.</p>
+      </div>
+      <button class="blue sml floor"><div class="inset">LET'S DO IT!</div></button>
+    </div>
+
+    <!-- LOADING SCREEN !-->
+    <div id="loading" class="overlay">
+      <img class="logo" src="rsc/corpslog_icon.png"></img>
+    </div>
+
+    <div class="content">
+      <!-- ACTION MENU !-->
+      <button id="pi" class="yellow med shadow" name="punched in" show="po,ls" hide=""><div class="inset">PUNCH IN</div></button>
+      <button id="po" class="yellow med shadow" name="punched out" show="pi" hide="po,ls"><div class="inset">PUNCH OUT</div></button>
+
+      <button id="ls" class="blue sml shadow" name="started break" show="le" hide=""><div class="inset">START BREAK</div></button>
+      <button id="le" class="blue sml shadow" name="ended break" show="po,ls" hide="le"><div class="inset">END BREAK</div></button>
+
+      <!-- LOG MENU !-->
+      <div id="log_menu" class="menu">
+        <table id="log">
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Action</th>
+            <th>Location</th>
+            <th>Notes</th>
+          </tr>
+        </table>
+        <!--<button id="submit_log" class="blue sml shadow"><div class="inset">SUBMIT HOURS</div></button>!-->
+      </div>
+
+      <!-- SETTINGS MENU !-->
+      <div id="settings_menu" class="menu">
+        <div class="center shadow">
+          <h1>NOTIFICATION SETTINGS</h1>
+          Enable notifications:
+          <input type="checkbox" id="notifications" checked="true"></input>
+          <br><br>
+          <div id="notification_settings">
+            Remind me to clock in at:
+            <input type="time" id="clockintime"></input>
+            <br>
+            Remind me to clock out at:
+            <input type="time" id="clockouttime"></input>
+            <br>
+            Remind me to end break after
+            <input id="breaklength" type="number" min="0" max="120"></input>
+            minutes.
+            <br>
+            Remind me to submit my hours on
+            <input id="submitdate" type="date"></input>
+          </div>
+          <!--<h1>PROGRAM SETTINGS</h1>
+            Program name:
+            <select id="program">
+            <option value="stbernard.oncorpsreports.com"> SBP SC </option>
+            </select>
+            <br>
+            Your position:
+            <select id="position">
+            <option value="PL"> Project Lead (Site Supervisor) </option>
+            </select>
+            <br>
+            Your year of enrollment:
+            <select id="programyear">
+            <option value="13"> 2017-2018 </option>
+            </select>!-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="undo" class="yellow sml shadow"><div class="inset">REMOVE LAST ENTRY</div></button>
+            <br>
+            <button id="wipe_log" class="yellow sml shadow"><div class="inset">WIPE LOGGED DATA</div></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOLBAR !-->
+    <table class="toolbar shadow">
+      <td><i id="show_settings" class="fa fa-cog fa-4x inset clickable"></i></td>
+      <td><i id="tag_loc" class="fa fa-compass fa-4x inset clickable"></i></td>
+      <td><i id="show_log" class="fa fa-pencil-alt fa-4x inset clickable"></i></td>
+    </table>
+
+    <!-- SCRIPTS !-->
+    <script src="rsc/jquery.js"></script>
+    <script src="cordova.js"></script>
+
+    <script src="device/location.js"></script>
+    <script src="device/reminder.js"></script>
+    <script src="device/browser.js"></script>
+
+    <script src="tools/actions.js"></script>
+    <script src="tools/animations.js"></script>
+    <script src="tools/log.js"></script>
+
+    <script src="settings.js"></script>
+    <script src="ready.js"></script>
+
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2q2mEJTnB3tYWZhi9WRJNg-AGTMR6UeY&callback=gcb">
+    </script>
+  </body>
+
+</html>
