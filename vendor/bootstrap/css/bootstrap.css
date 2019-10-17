@@ -24,10 +24,15 @@
   --teal: #20c997;
   --cyan: #1F9BCF;
   --white: #fff;
+  --gray-light: #e3e6e8;
   --gray: #919aa1;
-  --gray-dark: #343a40;
-  --primary: #1a1a1a;
-  --secondary: #fff;
+  --gray-dark: #454d54;
+  --signature-light: #878bc5;
+  --signature: #5359ac;
+  --signature-dark: #292c56;
+  --bkg: #2c2d3a;
+  --primary: #5359ac;
+  --secondary: #878bc5;
   --success: #4BBF73;
   --info: #1F9BCF;
   --warning: #f0ad4e;
@@ -6821,7 +6826,7 @@ button.bg-dark:focus {
 }
 
 .rounded {
-  border-radius: 0.25rem !important;
+  border-radius: 1rem !important;
 }
 
 .rounded-top {
@@ -10330,7 +10335,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .nav-item {
-  margin-right: 2rem;
+  margin-right: 0rem;
 }
 
 .btn {
