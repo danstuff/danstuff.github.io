@@ -1,3 +1,14 @@
+:root{
+  --gray-light: #e3e6e8;
+  --gray: #919aa1;
+  --gray-dark: #454d54;
+  --signature-light: #878bc5;
+  --signature: #5359ac;
+  --signature-dark: #282c57;
+  --signature-opaque: rgba(40, 44, 87, 0.5);
+  --bkg: #16161d;
+}
+
 @font-face {
   font-family: medel;
   src: url(medel.ttf);
@@ -182,3 +193,7 @@ a {
 a:hover, a:focus, a:active {
   color: var(--signature-light);
 }
+
+/* project tile CSS start */
+
+/* project tile CSS end */

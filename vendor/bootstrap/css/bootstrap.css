@@ -29,8 +29,8 @@
   --gray-dark: #454d54;
   --signature-light: #878bc5;
   --signature: #5359ac;
-  --signature-dark: #292c56;
-  --bkg: #2c2d3a;
+  --signature-dark: #282c57;
+  --bkg: #16161d;
   --primary: #5359ac;
   --secondary: #878bc5;
   --success: #4BBF73;
@@ -4430,7 +4430,7 @@ input[type="button"].btn-block {
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 660px) {
   .navbar-expand-sm {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
