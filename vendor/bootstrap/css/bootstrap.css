@@ -5869,12 +5869,10 @@ a.close.disabled {
 }
 
 .modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -webkit-transform: translate(0, -50px);
-          transform: translate(0, -50px);
+  -webkit-transition: -webkit-opacity 0.3s ease-out;
+  transition: -webkit-opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out, -webkit-opacity 0.3s ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {

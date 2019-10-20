@@ -80,6 +80,8 @@ p.lead {
   font-size: 1.5rem;
   line-height: 3.5rem;
   margin-right: 1rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .social-icons a:last-child {
@@ -92,16 +94,20 @@ p.lead {
 
 .dev-icons {
   font-size: 3rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .dev-icons .list-inline-item i:hover {
-  color: var(--signature);
+  /*color: var(--signature);*/
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 400;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 #sideNav .navbar-toggler:focus {
@@ -188,12 +194,10 @@ section.resume-section .resume-item .resume-date {
 
 a {
   color: var(--signature);
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 a:hover, a:focus, a:active {
   color: var(--signature-light);
 }
-
-/* project tile CSS start */
-
-/* project tile CSS end */
