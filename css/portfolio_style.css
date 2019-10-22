@@ -1,25 +1,16 @@
+.tile-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 
-.page-section {
-  padding: 6rem 0;
-}
-
-.page-section .page-section-heading {
-  font-size: 2.25rem;
-  line-height: 2rem;
-}
-
-@media (min-width: 992px) {
-  .page-section .page-section-heading {
-    font-size: 3rem;
-    line-height: 2.5rem;
-  }
-}
-
-.portfolio {
+  margin-right: -15px;
+  margin-left: -15px;
   margin-bottom: -30px;
 }
 
-.portfolio .portfolio-item {
+.tile-area .tile {
   cursor: pointer;
   position: relative;
   display: block;
@@ -29,7 +20,7 @@
   overflow: hidden;
 }
 
-.portfolio .portfolio-item .portfolio-item-caption {
+.tile-area .tile .tile-caption {
   position: absolute;
   top: 0;
   left: 0;
@@ -38,11 +29,11 @@
   background-color: var(--signature-opaque);
 }
 
-.portfolio .portfolio-item .portfolio-item-caption:hover {
+.tile-area .tile .tile-caption:hover {
   opacity: 1;
 }
 
-.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+.tile-area .tile .tile-caption .tile-caption-content {
   font-size: 1.5rem;
 }
 
@@ -51,20 +42,20 @@
     background-color: var(--signature-dark);
 }
 
-.portfolio-modal .portfolio-modal-title {
+.modal .modal-title {
   color: var(--gray-dark);
   font-size: 2.25rem;
   line-height: 2em;
 }
 
 @media (min-width: 992px) {
-  .portfolio-modal .portfolio-modal-title {
+  .modal .modal-title {
     font-size: 3rem;
     line-height: 2.5rem;
   }
 }
 
-.portfolio-modal .portfolio-close {
+.modal .modal-close {
   position: absolute;
   z-index: 1;
   right: 1.5rem;
@@ -74,7 +65,7 @@
   opacity: 1;
 }
 
-.portfolio-close {
+.modal-close {
   color: var(--signature);
   background: none;
   border: none;
@@ -82,7 +73,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.portfolio-close:hover {
+.modal-close:hover {
   color: var(--signature-light);
 }
 
@@ -90,6 +81,7 @@
   padding-top: 4rem;
 }
 
+/* override modal fade behavior */
 .fade {
     opacity: 1;
 
