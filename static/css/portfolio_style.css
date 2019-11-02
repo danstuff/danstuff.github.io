@@ -1,0 +1,91 @@
+.tile-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: -30px;
+}
+
+.tile-area .tile {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  max-width: 25rem;
+  margin-bottom: 30px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.tile-area .tile .tile-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  background-color: var(--signature-opaque);
+}
+
+.tile-area .tile .tile-caption:hover {
+  opacity: 1;
+}
+
+.tile-area .tile .tile-caption .tile-caption-content {
+  font-size: 1.5rem;
+}
+
+.modal-content {
+    border-radius: 10px;
+    background-color: var(--signature-dark);
+}
+
+.modal .modal-title {
+  color: var(--gray-dark);
+  font-size: 2.25rem;
+  line-height: 2em;
+}
+
+@media (min-width: 992px) {
+  .modal .modal-title {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+}
+
+.modal .modal-close {
+  position: absolute;
+  z-index: 1;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  opacity: 1;
+}
+
+.modal-close {
+  color: var(--signature);
+  background: none;
+  border: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-close:hover {
+  color: var(--signature-light);
+}
+
+.modal-body {
+  padding-top: 4rem;
+}
+
+/* override modal fade behavior */
+.fade {
+    opacity: 1;
+
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+}
+
