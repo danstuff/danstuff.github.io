@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, flash
 
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import create_engine
+from flask_sqlalchemy import Column, String
+from flask_sqlalchemy.ext.declarative import declarative_base
 
 from flask_wtf import FlaskForm
 from wtforms import TextField, TextAreaField, SubmitField
@@ -8,6 +10,15 @@ from wtforms.validators import DataRequired, Email
 
 app = Flask(__name__)
 app.secret_key = 'devKey16821'
+
+Base = declarative_base()
+
+class ContactMessage(Base):
+    __tablename__ = "ContactMessages"
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    email = Column(String)
+    message = Column(String)
 
 class ContactForm(FlaskForm):
     name = TextField("Name", [DataRequired("Please Enter Your Name.")])
@@ -20,6 +31,8 @@ class ContactForm(FlaskForm):
 @app.route("/index", methods=['GET', 'POST'])
 def show_index():
     form=ContactForm()
+
+    print(form.name.data)
 
     if request.method == 'GET':
         return render_template("index.html", form=form)
