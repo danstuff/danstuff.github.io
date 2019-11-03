@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, render_template, request
 
 from flask_sqlalchemy import SQLAlchemy
@@ -18,9 +20,10 @@ class ContactMessage(db.Model):
     name = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(128), nullable=False)
     message = db.Column(db.String(512), nullable=False)
+    time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Msg %r %r %r>' % (self.name, self.email, self.message)
+        return '<Msg %r %r %r %r>\n' % (self.name, self.email, self.message, self.time)
 
 class ContactForm(FlaskForm):
     name = TextField("Name", [DataRequired("Please Enter Your Name.")])
