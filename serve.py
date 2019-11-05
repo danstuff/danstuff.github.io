@@ -44,7 +44,8 @@ def show_index():
         if form.validate() == False:
             return render_template("index.html", form=form)
         else:
-            msg = ContactMessage(name = form.name.data,
+            msg = ContactMessage(
+                name = form.name.data,
                 email = form.email.data,
                 message = form.message.data)
 
