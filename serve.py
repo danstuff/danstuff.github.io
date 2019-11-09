@@ -10,22 +10,22 @@ from flask_wtf import FlaskForm
 from wtforms import TextField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email
 
+from auth import MailUsername, MailPassword, MyEmail, SecretKey
+
 app = Flask(__name__)
-app.secret_key = 'devKey16821'
+app.secret_key = SecretKey
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/main.db'
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587 
-app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_PORT'] = 465 
+app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
-app.config['MAIL_USERNAME'] = 'h33tbzkoHKXztURq@gmail.com'
-app.config['MAIL_PASSWORD'] = 'i6oRFyCKcrPHPA3a'
+app.config['MAIL_USERNAME'] = MailUsername
+app.config['MAIL_PASSWORD'] = MailPassword
 
-app.config['DEFAULT_MAIL_SENDER'] = 'Danstuff Mail Bot'
-
-my_email = "danyost23@gmail.com"
+my_email = MyEmail
 
 db = SQLAlchemy(app)
 
@@ -77,7 +77,7 @@ def show_index():
             db.session.commit()
 
             #notify me that someone sent a message 
-            email = Message("Someone Contacted You")
+            email = Message("Someone Contacted You", sender = "Danstuff Mail Bot")
             email.add_recipient(my_email)
             email.html = "New Message from {}, {}: <br><br> {}".format(
                     form.name.data, form.email.data, form.message.data)
