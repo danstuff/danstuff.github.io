@@ -2,8 +2,6 @@ from datetime import datetime
 
 from flask import Flask, render_template, request
 
-from flask_sqlalchemy import SQLAlchemy
-
 from flask_mail import Mail, Message
 
 from flask_wtf import FlaskForm
@@ -15,8 +13,6 @@ from auth import MailUsername, MailPassword, MyEmail, SecretKey
 app = Flask(__name__)
 app.secret_key = SecretKey
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/main.db'
-
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465 
 app.config['MAIL_USE_TLS'] = False
@@ -26,22 +22,7 @@ app.config['MAIL_USERNAME'] = MailUsername
 app.config['MAIL_PASSWORD'] = MailPassword
 
 my_email = MyEmail
-
-db = SQLAlchemy(app)
-
 mail = Mail(app)
-
-#ContactMessage table stores all messages submitted via the contact form
-class ContactMessage(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(128), nullable=False)
-    email = db.Column(db.String(128), nullable=False)
-    message = db.Column(db.String(512), nullable=False)
-    time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-
-    def __repr__(self):
-        return '<Msg %r %r %r %r>\n' % (
-                self.name, self.email, self.message, self.time)
 
 #ContactForm allows users to contact me by submitting their info
 class ContactForm(FlaskForm):
@@ -66,16 +47,6 @@ def show_index():
             #if the form was not validated, return to index with errors
             return render_template("index.html", form=form)
         else:
-            #Create new ContactMessage table entry
-            msg = ContactMessage(
-                name = form.name.data,
-                email = form.email.data,
-                message = form.message.data)
-
-            #add it to the database and commit
-            db.session.add(msg)
-            db.session.commit()
-
             #notify me that someone sent a message 
             email = Message("Someone Contacted You", sender = "Danstuff Mail Bot")
             email.add_recipient(my_email)
