@@ -8,6 +8,10 @@ from flask_wtf import FlaskForm
 from wtforms import TextField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email
 
+from apscheduler.schedulers.background import BackgroundScheduler
+
+import atexit
+
 from auth import MailUsername, MailPassword, MyEmail, SecretKey, NYTKey, OWMKey
 
 app = Flask(__name__)
@@ -33,6 +37,8 @@ article_categories = (("world", 2), ("us", 1), ("politics", 1),
 
 my_email = MyEmail
 mail = Mail(app)
+
+s = BackgroundScheduler()
 
 #ContactForm allows users to contact me by submitting their info
 class ContactForm(FlaskForm):
@@ -83,21 +89,31 @@ def daily_update():
         content = content + weather_fmt.format(loc, temp, wthr)
         
     for cat in article_categories:
-        #TODO fetch article title, content, and URL
+        #fetch articles from ny times
         r = request.get("https://api.nytimes.com/svc/topstories/v2/{}.json?api-key={}"
                         .format(cat[0], NYTKey)).json()
                         
-        title = r["title"]
-        body = r["abstract"]
-        aurl = r["url"]
+        #pull out the titles, bodies, and urls for desired number of articles
+        for i in range(0, cat[1])
+            title = r[i]["title"]
+            body = r[i]["abstract"]
+            aurl = r[i]["url"]
+            
+            content = content + article_fmt.format(title, body, aurl)
         
-        content = content + article_fmt.format(title, body, aurl)
-        
+    #create message object, set recipient, set content, and send
     email = Message("Good morning! Here's your daily update", sender = sender_name)
     email.add_recipient(my_email)
     email.html = content
     
     mail.send(email)
+    
+def schedule():
+    s.add_job(func=daily_update, trigger="interval", seconds=86400)
+    s.start()
 
 if __name__ == "__main__":
+    schedule()
     app.run()
+
+atexit.register(lambda: scheduler.shutdown())
