@@ -15,14 +15,15 @@
 }
 
 body {
-  padding-top: 54px;
+  padding-top: 200px;
+  padding-left: 50px;
   color: var(--gray);
   background-color: var(--bkg);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   body {
-    padding-top: 0;
+    padding-top: 0px;
     padding-left: 12rem;
   }
 }
@@ -118,7 +119,7 @@ p.lead {
     width: 10rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #sideNav {
     text-align: center;
     position: fixed;
@@ -168,7 +169,7 @@ section.resume-section .resume-item .resume-date {
   min-width: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   section.resume-section {
     min-height: 100vh;
   }
@@ -177,7 +178,7 @@ section.resume-section .resume-item .resume-date {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   section.resume-section {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;

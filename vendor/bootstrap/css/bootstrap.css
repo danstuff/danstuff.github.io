@@ -4430,7 +4430,7 @@ input[type="button"].btn-block {
   }
 }
 
-@media (min-width: 660px) {
+@media (min-width: 768px) {
   .navbar-expand-sm {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
